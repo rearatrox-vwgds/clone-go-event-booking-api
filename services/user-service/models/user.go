@@ -38,6 +38,19 @@ func GetUsers() ([]User, error) {
 	return users, nil
 }
 
+func GetUserById(id int64) (*User, error) {
+	var u User
+	query := `SELECT * FROM users where id = ?`
+	row := db.DB.QueryRow(query, id)
+
+	err := row.Scan(&u.ID, &u.Email, &u.Password)
+	if err != nil {
+		return nil, err
+	}
+
+	return &u, nil
+}
+
 func (u *User) ValidateCredentials() error {
 	query := `SELECT id, Password FROM users where email=?`
 

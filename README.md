@@ -51,7 +51,8 @@ Jeder Service läuft als eigenständiger Container im Docker-Compose-Setup und n
 ### 👤 User-Service (`:USERSERVICE_PORT`)
 | Methode | Route | Beschreibung |
 |----------|--------|--------------|
-| `GET` | `API_PFREIX/users` | Authentifiziert einen Benutzer |
+| `GET` | `API_PFREIX/users` | Listet alle User auf |
+| `GET` | `API_PFREIX/users/:id` | Zeigt einen bestimmten User |
 | `POST` | `API_PFREIX/users/signup` | Erstellt einen neuen Benutzer |
 | `POST` | `API_PFREIX/users/login` | Authentifiziert einen Benutzer |
 
