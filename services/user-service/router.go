@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"rearatrox/event-booking-api/services/user-service/handlers"
 
 	"github.com/gin-gonic/gin"
@@ -8,6 +9,12 @@ import (
 
 func RegisterRoutes(router *gin.Engine) {
 
-	router.POST("/signup", handlers.Signup)
-	router.POST("/login", handlers.Login)
+	api := router.Group(os.Getenv("API_PREFIX"))
+	{
+		api.GET("/users", handlers.GetUsers)
+
+		api.POST("/users/signup", handlers.Signup)
+		api.POST("/users/login", handlers.Login)
+	}
+
 }

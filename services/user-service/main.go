@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-	"os"
 	"rearatrox/event-booking-api/pkg/config"
 	"rearatrox/event-booking-api/services/user-service/db"
 
@@ -11,7 +9,6 @@ import (
 
 func main() {
 	config.Load()
-	fmt.Println(os.Getenv("JWT_SECRET"))
 
 	db.InitDB()
 

@@ -12,6 +12,32 @@ type User struct {
 	Password string `binding: "required"`
 }
 
+func GetUsers() ([]User, error) {
+
+	query := `SELECT * FROM users`
+	rows, err := db.DB.Query(query)
+
+	if err != nil {
+		return nil, err
+	}
+
+	defer rows.Close()
+
+	var users []User
+
+	for rows.Next() {
+		var u User
+		err := rows.Scan(&u.ID, &u.Email, &u.Password)
+		if err != nil {
+			return nil, err
+		}
+
+		users = append(users, u)
+	}
+
+	return users, nil
+}
+
 func (u *User) ValidateCredentials() error {
 	query := `SELECT id, Password FROM users where email=?`
 

@@ -40,9 +40,9 @@ Jeder Service läuft als eigenständiger Container im Docker-Compose-Setup und n
    docker compose up -d
    ```
 
-4. **Services testen**  
-   - User-Service: [http://localhost:8081 (oderer anderer gewählter Port)](http://localhost:8081)  
-   - Event-Service: [http://localhost:8082 (oderer anderer gewählter Port)](http://localhost:8082)
+4. **Services testen**   
+   - Event-Service: [http://localhost:8081 (oderer anderer gewählter Port)](http://localhost:8081)
+   - User-Service: [http://localhost:8082 (oderer anderer gewählter Port)](http://localhost:8082) 
 
 ---
 
@@ -51,19 +51,20 @@ Jeder Service läuft als eigenständiger Container im Docker-Compose-Setup und n
 ### 👤 User-Service (`:USERSERVICE_PORT`)
 | Methode | Route | Beschreibung |
 |----------|--------|--------------|
-| `POST` | `/signup` | Erstellt einen neuen Benutzer |
-| `POST` | `/login` | Authentifiziert einen Benutzer |
+| `GET` | `API_PFREIX/users` | Authentifiziert einen Benutzer |
+| `POST` | `API_PFREIX/users/signup` | Erstellt einen neuen Benutzer |
+| `POST` | `API_PFREIX/users/login` | Authentifiziert einen Benutzer |
 
 ### Event-Service (`:EVENTSERVICE_PORT`)
 | Methode | Route | Beschreibung |
 |----------|--------|--------------|
-| `POST` | `/events` | Erstellt ein neues Event |
-| `GET` | `/events` | Listet alle Events auf |
-| `GET` | `/events/:id` | Zeigt ein bestimmtes Event |
-| `PUT` | `/events/:id` | Aktualisiert ein bestimmtes Event (Auth) |
-| `DELETE` | `/events/:id` | Löscht ein bestimmtes Event (Auth) |
-| `POST` | `/events/:id/register` | Bucht ein Event für einen Benutzer (Auth) |
-| `DELETE` | `/events/:id/delete` | Löscht ein Event für einen Benutzer (Auth) |
+| `POST` | `API_PFREIX/events` | Erstellt ein neues Event |
+| `GET` | `API_PFREIX/events` | Listet alle Events auf |
+| `GET` | `API_PFREIX/events/:id` | Zeigt ein bestimmtes Event |
+| `PUT` | `API_PFREIX/events/:id` | Aktualisiert ein bestimmtes Event (Auth) |
+| `DELETE` | `API_PFREIX/events/:id` | Löscht ein bestimmtes Event (Auth) |
+| `POST` | `API_PFREIX/events/:id/register` | Bucht ein Event für einen Benutzer (Auth) |
+| `DELETE` | `API_PFREIX/events/:id/delete` | Löscht ein Event für einen Benutzer (Auth) |
 
 ---
 
