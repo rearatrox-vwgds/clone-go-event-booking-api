@@ -1,0 +1,1 @@
+Hallo, das hier ist ein einfaches Textfile, um die versch. Möglichkeiten mit Merges, Branches zu demonstrieren
