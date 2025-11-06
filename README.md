@@ -31,8 +31,7 @@ Jeder Service läuft als eigenständiger Container im Docker-Compose-Setup und n
 2. **.env-Dateien anpassen**  
    Erstelle aus der `.env.example` eine `.env`-Datei und passe sie an:
    ```
-   cp .env.example user-service/.env
-   cp .env.example event-service/.env
+   cp .env.example .env
    ```
 
 3. **Container starten**
